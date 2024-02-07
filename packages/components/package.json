@@ -55,6 +55,7 @@
         "langfuse-langchain": "^1.0.31",
         "langsmith": "^0.0.49",
         "linkifyjs": "^4.1.1",
+        "llamaindex": "^0.1.7",
         "llmonitor": "^0.5.5",
         "mammoth": "^1.5.1",
         "moment": "^2.29.3",

@@ -560,7 +560,27 @@ export const serializeChatHistory = (chatHistory: string | Array<string>) => {
     }
     return chatHistory
 }
+/**
+ * Flatten nested object
+ * @param {ICommonObject} obj
+ * @param {string} parentKey
+ * @returns {ICommonObject}
+ */
+export const flattenObject = (obj: ICommonObject, parentKey?: string) => {
+    let result: any = {}
 
+    Object.keys(obj).forEach((key) => {
+        const value = obj[key]
+        const _key = parentKey ? parentKey + '.' + key : key
+        if (typeof value === 'object') {
+            result = { ...result, ...flattenObject(value, _key) }
+        } else {
+            result[_key] = value
+        }
+    })
+
+    return result
+}
 /**
  * Convert schema to zod schema
  * @param {string | object} schema

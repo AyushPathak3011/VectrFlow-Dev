@@ -55,6 +55,7 @@
         "node": ">=18.15.0"
     },
     "dependencies": {
+        "@langchain/community": "^0.0.22",
         "@mui/icons-material": "^5.15.2"
     }
 }
